@@ -6,32 +6,18 @@
 
 <style>
 
-/* FUNDO COM IMAGEM + FILTRO */
+/* FUNDO MAIS ELEGANTE (VIBE NOSTÁLGICA) */
 body {
   margin: 0;
   font-family: Arial;
   color: white;
   text-align: center;
-  background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.6);
-  z-index:-1;
+  background: radial-gradient(circle at top, #1a1a2e, #0f3460, #000000);
 }
 
 /* CONTAINER */
 .container {
-  animation: fadeIn 1.2s ease;
+  animation: fadeIn 1s ease;
 }
 
 @keyframes fadeIn {
@@ -46,76 +32,63 @@ body::before {
   border-radius: 50%;
   border: 4px solid white;
   margin-top: 30px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.6);
 }
 
 /* TEXTO */
 h1 {
   font-size: 38px;
-  margin-bottom: 10px;
 }
 
 p {
   max-width: 520px;
   margin: auto;
-  line-height: 1.5;
 }
 
-/* LINKS */
+/* BOTÕES EM GRID (não lista) */
+.links {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
 .links a {
-  display: block;
-  background: rgba(255,255,255,0.15);
-  margin: 12px auto;
-  padding: 14px;
-  border-radius: 14px;
-  width: 270px;
+  background: rgba(255,255,255,0.1);
+  padding: 12px;
+  border-radius: 12px;
   text-decoration: none;
   color: white;
   font-weight: bold;
-  backdrop-filter: blur(6px);
   transition: 0.3s;
 }
 
 .links a:hover {
-  background: rgba(255,255,255,0.35);
-  transform: scale(1.05);
+  background: rgba(255,255,255,0.3);
 }
 
-/* PLAYER BONITO */
+/* PLAYER */
 .player {
   margin-top: 30px;
 }
 
-audio {
-  width: 250px;
-  border-radius: 10px;
-}
-
-/* GALERIA */
+/* GALERIA 5x5 */
 .gallery {
   margin-top: 50px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
   padding: 20px;
 }
 
 .grid img {
   width: 100%;
-  height: 220px;
-  object-fit: contain;
-  background: rgba(255,255,255,0.08);
-  border-radius: 15px;
-  padding: 6px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  transition: 0.3s;
-}
-
-.grid img:hover {
-  transform: scale(1.05);
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 /* WHATS */
@@ -124,10 +97,9 @@ audio {
   bottom: 20px;
   right: 20px;
   background: #25d366;
-  color: white;
-  padding: 15px 18px;
+  padding: 15px;
   border-radius: 50%;
-  font-size: 20px;
+  color: white;
   text-decoration: none;
 }
 
@@ -145,28 +117,24 @@ audio {
 <h1>🌈 John Ferraro</h1>
 
 <p>
-Professor e jornalista apaixonado por comunicação, viagens e boas histórias. 🌍✨<br>
-Sempre em movimento entre aulas, textos e novas experiências.
+Professor e jornalista apaixonado por comunicação, viagens e boas histórias.
 </p>
 
 <div class="links">
-  <a href="https://wa.me/5511996444050" target="_blank">📱 WhatsApp</a>
-  <a href="mailto:john@johnferraro.com.br">📧 E-mail</a>
-  <a href="https://instagram.com/_johnferraro" target="_blank">📸 Instagram</a>
-  <a href="https://tiktok.com/@ferrarojohn" target="_blank">🎵 TikTok</a>
-  <a href="https://facebook.com/ferraro.alan" target="_blank">👍 Facebook</a>
-  <a href="https://linkedin.com/in/johnferraro" target="_blank">💼 LinkedIn</a>
-
-  <!-- NOVOS BOTÕES -->
-  <a href="viagens.html">🌍 Minhas viagens</a>
-  <a href="projetos.html">🚀 Meus projetos</a>
+  <a href="https://wa.me/5511996444050">WhatsApp</a>
+  <a href="mailto:john@johnferraro.com.br">E-mail</a>
+  <a href="https://instagram.com/_johnferraro">Instagram</a>
+  <a href="https://tiktok.com/@ferrarojohn">TikTok</a>
+  <a href="https://facebook.com/ferraro.alan">Facebook</a>
+  <a href="https://linkedin.com/in/johnferraro">LinkedIn</a>
+  <a href="viagens.html">Viagens</a>
+  <a href="projetos.html">Projetos</a>
 </div>
 
-<!-- PLAYER DE RÁDIO -->
+<!-- RÁDIO BRASILEIRA QUE FUNCIONA -->
 <div class="player">
-  <p>🎧 Tocando agora</p>
   <audio controls>
-    <source src="https://playerservices.streamtheworld.com/api/livestream-redirect/JOVEMPAN_POP.mp3" type="audio/mpeg">
+    <source src="https://playerservices.streamtheworld.com/api/livestream-redirect/CBN_SPAAC.aac" type="audio/aac">
   </audio>
 </div>
 
@@ -187,7 +155,7 @@ Sempre em movimento entre aulas, textos e novas experiências.
   </div>
 </div>
 
-<a class="whatsapp" href="https://wa.me/5511996444050" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/5511996444050">💬</a>
 
 </div>
 
