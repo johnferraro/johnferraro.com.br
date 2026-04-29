@@ -6,23 +6,27 @@
 
 <style>
 
-/* FUNDO MAIS ELEGANTE (VIBE NOSTÁLGICA) */
+/* FUNDO NOSTÁLGICO MODERNO */
 body {
   margin: 0;
   font-family: Arial;
   color: white;
   text-align: center;
-  background: radial-gradient(circle at top, #1a1a2e, #0f3460, #000000);
+  background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-/* CONTAINER */
-.container {
-  animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 /* PERFIL */
@@ -30,31 +34,32 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 4px solid white;
+  border: 3px solid white;
   margin-top: 30px;
 }
 
 /* TEXTO */
 h1 {
-  font-size: 38px;
+  font-size: 36px;
 }
 
 p {
-  max-width: 520px;
+  max-width: 500px;
   margin: auto;
+  line-height: 1.6;
 }
 
-/* BOTÕES EM GRID (não lista) */
+/* BOTÕES GRID */
 .links {
   display: grid;
-  grid-template-columns: repeat(2, 150px);
+  grid-template-columns: repeat(2, 160px);
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
 }
 
 .links a {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.15);
   padding: 12px;
   border-radius: 12px;
   text-decoration: none;
@@ -72,7 +77,7 @@ p {
   margin-top: 30px;
 }
 
-/* GALERIA 5x5 */
+/* GALERIA */
 .gallery {
   margin-top: 50px;
 }
@@ -86,9 +91,11 @@ p {
 
 .grid img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  height: 180px;
+  object-fit: contain; /* NÃO CORTA */
+  background: rgba(0,0,0,0.5);
   border-radius: 10px;
+  padding: 5px;
 }
 
 /* WHATS */
@@ -108,16 +115,15 @@ p {
 
 <body>
 
-<div class="container">
-
 <div class="profile">
   <img src="foto4.jpg">
 </div>
 
-<h1>🌈 John Ferraro</h1>
+<h1>John Ferraro</h1>
 
 <p>
-Professor e jornalista apaixonado por comunicação, viagens e boas histórias.
+Professor e jornalista movido por histórias, conexões e novas experiências.  
+Entre viagens, música e cotidiano, transformo vivências em conteúdo e expressão.
 </p>
 
 <div class="links">
@@ -131,15 +137,15 @@ Professor e jornalista apaixonado por comunicação, viagens e boas histórias.
   <a href="projetos.html">Projetos</a>
 </div>
 
-<!-- RÁDIO BRASILEIRA QUE FUNCIONA -->
+<!-- RÁDIO POP / ELETRÔNICA -->
 <div class="player">
   <audio controls>
-    <source src="https://playerservices.streamtheworld.com/api/livestream-redirect/CBN_SPAAC.aac" type="audio/aac">
+    <source src="https://stream.zeno.fm/f3q1m8q7yzzuv" type="audio/mpeg">
   </audio>
 </div>
 
 <div class="gallery">
-  <h2>📸 Minha vida</h2>
+  <h2>Minha vida</h2>
 
   <div class="grid">
     <img src="foto1.jpg">
@@ -156,8 +162,6 @@ Professor e jornalista apaixonado por comunicação, viagens e boas histórias.
 </div>
 
 <a class="whatsapp" href="https://wa.me/5511996444050">💬</a>
-
-</div>
 
 </body>
 </html>
