@@ -6,7 +6,7 @@
 
 <style>
 
-/* FUNDO */
+/* 🌆 FUNDO SKYLINE */
 body {
   margin: 0;
   font-family: Arial;
@@ -56,7 +56,7 @@ body::before {
   padding: 20px;
 }
 
-/* TOPO (perfil + player lado a lado) */
+/* TOPO */
 .topo {
   display: flex;
   align-items: center;
@@ -87,21 +87,37 @@ body::before {
   border-radius: 12px;
 }
 
-/* LINKS */
+/* BOTÕES BONITOS */
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   margin-top: 30px;
   justify-content: center;
 }
 
 .links a {
-  background: rgba(255,255,255,0.15);
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
   text-decoration: none;
   color: white;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* CORES POR REDE */
+.links a:nth-child(1) { background: #25d366; } /* Whats */
+.links a:nth-child(2) { background: #444; }    /* Email */
+.links a:nth-child(3) { background: #e1306c; } /* Insta */
+.links a:nth-child(4) { background: #000; }    /* TikTok */
+.links a:nth-child(5) { background: #1877f2; } /* Facebook */
+.links a:nth-child(6) { background: #0a66c2; } /* LinkedIn */
+
+/* HOVER */
+.links a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
 /* GALERIA */
@@ -165,20 +181,21 @@ body::before {
   <div class="player">
     <iframe style="border-radius:12px" 
       src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" 
-      width="300" height="80">
+      width="300" height="80"
+      allow="autoplay; clipboard-write; encrypted-media;">
     </iframe>
   </div>
 
 </div>
 
-<!-- LINKS -->
+<!-- CONTATOS -->
 <div class="links">
-  <a href="https://wa.me/5511996444050">WhatsApp</a>
-  <a href="mailto:john@johnferraro.com.br">E-mail</a>
-  <a href="https://instagram.com/_johnferraro">Instagram</a>
-  <a href="https://tiktok.com/@ferrarojohn">TikTok</a>
-  <a href="https://facebook.com/ferraro.alan">Facebook</a>
-  <a href="https://linkedin.com/in/johnferraro">LinkedIn</a>
+  <a href="https://wa.me/5511996444050" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <a href="mailto:john@johnferraro.com.br" target="_blank" rel="noopener noreferrer">E-mail</a>
+  <a href="https://instagram.com/_johnferraro" target="_blank" rel="noopener noreferrer">Instagram</a>
+  <a href="https://tiktok.com/@ferrarojohn" target="_blank" rel="noopener noreferrer">TikTok</a>
+  <a href="https://facebook.com/ferraro.alan" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://linkedin.com/in/johnferraro" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 </div>
 
 <!-- GALERIA -->
