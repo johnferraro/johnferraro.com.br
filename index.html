@@ -216,6 +216,16 @@ body::before {
   </div>
 </div>
 
+  <p>👀 Visitas: <span id="contador">...</span></p>
+
+<script>
+fetch('https://api.countapi.xyz/hit/johnferraro.com.br/visitas')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('contador').innerText = data.value;
+  });
+</script>
+  
 </div>
 
 </body>
