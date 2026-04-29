@@ -49,7 +49,7 @@ p {
   line-height: 1.6;
 }
 
-/* BOTÕES GRID */
+/* BOTÕES */
 .links {
   display: grid;
   grid-template-columns: repeat(2, 160px);
@@ -92,7 +92,7 @@ p {
 .grid img {
   width: 100%;
   height: 180px;
-  object-fit: contain; /* NÃO CORTA */
+  object-fit: contain;
   background: rgba(0,0,0,0.5);
   border-radius: 10px;
   padding: 5px;
@@ -122,8 +122,8 @@ p {
 <h1>John Ferraro</h1>
 
 <p>
-Professor e jornalista movido por histórias, conexões e novas experiências.  
-Entre viagens, música e cotidiano, transformo vivências em conteúdo e expressão.
+Professor e jornalista movido por histórias, conexões e novas experiências.<br>
+Entre viagens, música e cotidiano, transformo vivências em expressão.
 </p>
 
 <div class="links">
@@ -137,10 +137,11 @@ Entre viagens, música e cotidiano, transformo vivências em conteúdo e express
   <a href="projetos.html">Projetos</a>
 </div>
 
-<!-- RÁDIO POP / ELETRÔNICA -->
+<!-- 🎧 RÁDIO NRJ (FUNCIONA) -->
 <div class="player">
+  <p>🎧 Tocando agora</p>
   <audio controls>
-    <source src="https://stream.zeno.fm/f3q1m8q7yzzuv" type="audio/mpeg">
+    <source src="https://playerservices.streamtheworld.com/api/livestream-redirect/NRJ_FR_SC.mp3" type="audio/mpeg">
   </audio>
 </div>
 
