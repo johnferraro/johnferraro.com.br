@@ -1,234 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>John Ferraro</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Hub</title>
 
-<style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-/* 🌆 FUNDO SKYLINE */
-body {
-  margin: 0;
-  font-family: Arial;
-  color: white;
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-  background: url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
+    body{
+      font-family:'Poppins',sans-serif;
+      min-height:100vh;
+      background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat fixed;
+      position:relative;
+      color:white;
+      overflow-x:hidden;
+    }
 
-body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.65);
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+    body::before{
+      content:'';
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.45);
+      backdrop-filter:blur(8px);
+      z-index:-1;
+    }
 
-/* MENU */
-.menu {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 15px;
-  backdrop-filter: blur(6px);
-  z-index: 1000;
-}
+    .container{
+      width:100%;
+      max-width:1300px;
+      margin:auto;
+      padding:40px 20px 60px;
+    }
 
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+    .top{
+      text-align:center;
+      margin-bottom:40px;
+    }
 
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: 100px auto 0;
-  padding: 20px;
-}
+    .top h1{
+      font-size:3rem;
+      font-weight:700;
+      margin-bottom:10px;
+    }
 
-/* TOPO */
-.topo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
+    .top p{
+      opacity:0.9;
+      font-size:1rem;
+    }
 
-/* PERFIL */
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:22px;
+    }
 
-.profile img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 3px solid white;
-}
+    .card{
+      position:relative;
+      height:190px;
+      border-radius:28px;
+      overflow:hidden;
+      text-decoration:none;
+      color:white;
+      transition:0.3s ease;
+      background-size:cover;
+      background-position:center;
+      border:1px solid rgba(255,255,255,0.15);
+      box-shadow:0 8px 30px rgba(0,0,0,0.25);
+    }
 
-.profile-text {
-  max-width: 400px;
-}
+    .card:hover{
+      transform:translateY(-6px) scale(1.02);
+    }
 
-/* PLAYER */
-.player iframe {
-  border-radius: 12px;
-}
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:22px;
+    }
 
-/* BOTÕES BONITOS */
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 30px;
-  justify-content: center;
-}
+    .emoji{
+      font-size:2rem;
+      margin-bottom:10px;
+    }
 
-.links a {
-  padding: 12px 16px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: 0.3s;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
+    .title{
+      font-size:1.3rem;
+      font-weight:600;
+      margin-bottom:5px;
+    }
 
-/* CORES POR REDE */
-.links a:nth-child(1) { background: #25d366; } /* Whats */
-.links a:nth-child(2) { background: #444; }    /* Email */
-.links a:nth-child(3) { background: #e1306c; } /* Insta */
-.links a:nth-child(4) { background: #000; }    /* TikTok */
-.links a:nth-child(5) { background: #1877f2; } /* Facebook */
-.links a:nth-child(6) { background: #0a66c2; } /* LinkedIn */
+    .desc{
+      font-size:0.92rem;
+      opacity:0.9;
+      line-height:1.4;
+    }
 
-/* HOVER */
-.links a:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-}
+    footer{
+      margin-top:45px;
+      text-align:center;
+      opacity:0.7;
+      font-size:0.9rem;
+    }
 
-/* GALERIA */
-.gallery {
-  margin-top: 50px;
-}
+    @media(max-width:700px){
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-}
+      .top h1{
+        font-size:2.2rem;
+      }
 
-.grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-  background: rgba(0,0,0,0.5);
-  border-radius: 10px;
-}
+      .card{
+        height:170px;
+      }
 
-/* RESPONSIVO */
-@media (max-width: 900px) {
-  .topo {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-</style>
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- MENU -->
-<div class="menu">
-  <a href="#">Início</a>
-  <a href="viagens.html">Viagens</a>
-  <a href="projetos.html">Projetos</a>
-</div>
+  <div class="container">
 
-<div class="container">
-
-<!-- TOPO -->
-<div class="topo">
-
-  <div class="profile">
-    <img src="foto11.jpg">
-    <div class="profile-text">
-      <h1>John Ferraro</h1>
-      <p>
-        Professor e jornalista movido por histórias, conexões e novas experiências.
-      </p>
+    <div class="top">
+      <h1>Meu Hub</h1>
+      <p>Meus sites favoritos, notícias, entretenimento e coisas úteis.</p>
     </div>
+
+    <div class="grid">
+
+      <a class="card" href="https://g1.globo.com/" target="_blank"
+      style="background-image:url('https://images.unsplash.com/photo-1495020689067-958852a7765e?q=80&w=1200&auto=format&fit=crop');">
+        <div class="overlay">
+          <div class="emoji">📰</div>
+          <div class="title">Notícias</div>
+          <div class="desc">Acompanhe as principais notícias do dia.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://hugogloss.uol.com.br/" target="_blank"
+      style="background-image:url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop');">
+        <div class="overlay">
+          <div class="emoji">🎬</div>
+          <div class="title">Fofocas</div>
+          <div class="desc">Celebridades, reality shows e entretenimento.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://www.youtube.com/" target="_blank"
+      style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop');">
+        <div class="overlay">
+          <div class="emoji">▶️</div>
+          <div class="title">YouTube</div>
+          <div class="desc">Vídeos, música e canais favoritos.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://open.spotify.com/" target="_blank"
+      style="background-image:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop');">
+        <div class="overlay">
+          <div class="emoji">🎵</div>
+          <div class="title">Spotify</div>
+          <div class="desc">Músicas, playlists e podcasts.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://www.netflix.com/br/" target="_blank"
+      style="background-image:url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop');">
+        <div class="overlay">
+          <div class="emoji">🍿</div>
+          <div class="title">Streaming</div>
+          <div class="desc">Filmes, séries e maratonas.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://www.coursera.org/" target="_blank"
+      style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop');">
+        <div class="overlay">
+          <div class="emoji">📚</div>
+          <div class="title">Educação</div>
+          <div class="desc">Cursos e aprendizado online.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://www.ifood.com.br/" target="_blank"
+      style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop');">
+        <div class="overlay">
+          <div class="emoji">🍔</div>
+          <div class="title">Delivery</div>
+          <div class="desc">Comida rápida e pedidos online.</div>
+        </div>
+      </a>
+
+      <a class="card" href="https://chatgpt.com/" target="_blank"
+      style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop');">
+        <div class="overlay">
+          <div class="emoji">🤖</div>
+          <div class="title">Ferramentas</div>
+          <div class="desc">Sites úteis e inteligência artificial.</div>
+        </div>
+      </a>
+
+    </div>
+
+    <footer>
+      © 2026 • Meu Hub
+    </footer>
+
   </div>
-
-  <div class="player">
-    <iframe style="border-radius:12px" 
-      src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" 
-      width="300" height="80"
-      allow="autoplay; clipboard-write; encrypted-media;">
-    </iframe>
-  </div>
-
-</div>
-
-<!-- CONTATOS -->
-<div class="links">
-  <a href="https://wa.me/5511996444050" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-  <a href="mailto:john@johnferraro.com.br" target="_blank" rel="noopener noreferrer">E-mail</a>
-  <a href="https://instagram.com/_johnferraro" target="_blank" rel="noopener noreferrer">Instagram</a>
-  <a href="https://tiktok.com/@ferrarojohn" target="_blank" rel="noopener noreferrer">TikTok</a>
-  <a href="https://facebook.com/ferraro.alan" target="_blank" rel="noopener noreferrer">Facebook</a>
-  <a href="https://linkedin.com/in/johnferraro" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-</div>
-
-<!-- GALERIA -->
-<div class="gallery">
-  <h2>Minha vida</h2>
-
-  <div class="grid">
-    <img src="foto1.jpg">
-    <img src="foto2.jpg">
-    <img src="foto3.jpg">
-    <img src="foto4.jpg">
-    <img src="foto5.jpg">
-    <img src="foto6.jpg">
-    <img src="foto7.jpg">
-    <img src="foto8.jpg">
-    <img src="foto9.jpg">
-    <img src="foto10.jpg">
-  </div>
-</div>
-
-  <p style="margin-top:30px; font-size:18px;">
-  👀 <strong><span id="contador">...</span></strong> visitas
-</p>
-
-<script>
-fetch('https://api.countapi.xyz/hit/johnferraro.com.br/visitas')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('contador').innerText = data.value;
-  });
-</script>
-  
-</div>
 
 </body>
 </html>
